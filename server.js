@@ -4,7 +4,7 @@ var usercontroller=require('./usercontroller')
 var hotelcontroller=require('./hotelcontroller')
 var mong=require('mongoose')
 var bodyparser=require('body-parser')
-const PORT=1400 || Processing.env.PORT
+const PORT=Process.env.PORT || 1400
 var cors=require('cors')
 server.use(cors())
 const MongoUrl='mongodb://test:test1234@ds117729.mlab.com:17729/coerproject'
