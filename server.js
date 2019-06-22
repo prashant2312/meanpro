@@ -11,6 +11,7 @@ var cors=require('cors')
 server.use(cors())
 const MongoUrl='mongodb://test:test1234@ds117729.mlab.com:17729/coerproject'
 server.use(bodyparser.json())
+server.use(express.static(__dirname + '/dist/p1'));
 server.post('/api/signup',usercontroller.signup)
 server.post('/api/login',usercontroller.login)
 server.post('/api/addproduct',usercontroller.addproduct)
@@ -21,11 +22,11 @@ server.post('/api/findhotel',hotelcontroller.findhotel)
 server.post('/api/forgetpass',usercontroller.forgetpass)
 server.post('/api/remove',usercontroller.remove)
 server.get('/', function(req,res){
-    res.sendFile('./dist/frontend/index.html')
+    res.sendFile('./dist/p1/index.html')
 })
 server.get('/*', function(req,res) {
     
-    res.sendFile(path.join(__dirname+'/dist/frontend/index.html'));
+    res.sendFile(path.join(__dirname+'/dist/p1/index.html'));
     });
 
 server.listen(PORT,function()
