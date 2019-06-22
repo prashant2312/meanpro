@@ -1,3 +1,5 @@
+var path = require('path')
+
 var express=require('express')
 var server=express()
 var usercontroller=require('./usercontroller')
@@ -9,21 +11,22 @@ var cors=require('cors')
 server.use(cors())
 const MongoUrl='mongodb://test:test1234@ds117729.mlab.com:17729/coerproject'
 server.use(bodyparser.json())
-server.post('/signup',usercontroller.signup)
-server.post('/login',usercontroller.login)
-server.post('/addproduct',usercontroller.addproduct)
-server.get('/find/:productid',usercontroller.find)
-server.get('/findall',usercontroller.findall)
-server.post('/addhotel',hotelcontroller.addhotel)
-server.post('/findhotel',hotelcontroller.findhotel)
-server.post('/forgetpass',usercontroller.forgetpass)
-server.post('/remove',usercontroller.remove)
-server.get('/',function(req,res)
-{
-    res.send({
-        message:'root'
-    })
+server.post('/api/signup',usercontroller.signup)
+server.post('/api/login',usercontroller.login)
+server.post('/api/addproduct',usercontroller.addproduct)
+server.get('/api/find/:productid',usercontroller.find)
+server.get('/api/findall',usercontroller.findall)
+server.post('/api/addhotel',hotelcontroller.addhotel)
+server.post('/api/findhotel',hotelcontroller.findhotel)
+server.post('/api/forgetpass',usercontroller.forgetpass)
+server.post('/api/remove',usercontroller.remove)
+server.get('/', function(req,res){
+    res.sendFile('./dist/frontend/index.html')
 })
+server.get('/*', function(req,res) {
+    
+    res.sendFile(path.join(__dirname+'/dist/frontend/index.html'));
+    });
 
 server.listen(PORT,function()
     {
