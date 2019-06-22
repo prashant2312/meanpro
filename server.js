@@ -18,6 +18,12 @@ server.post('/addhotel',hotelcontroller.addhotel)
 server.post('/findhotel',hotelcontroller.findhotel)
 server.post('/forgetpass',usercontroller.forgetpass)
 server.post('/remove',usercontroller.remove)
+server.get('/',function(req,res)
+{
+    res.send({
+        message:'root'
+    })
+})
 
 server.listen(PORT,function()
     {
