@@ -773,7 +773,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apiurl = 'http://localhost:1400/findall';
+var apiurl = '/api/findall';
 var HomeComponent = /** @class */ (function () {
     function HomeComponent(http) {
         var _this = this;

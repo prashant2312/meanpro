@@ -755,7 +755,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apiurl = 'http://localhost:1400/findall';
+var apiurl = '/api/findall';
 let HomeComponent = class HomeComponent {
     constructor(http) {
         this.http = http;
