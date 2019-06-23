@@ -9,7 +9,7 @@ var bodyparser=require('body-parser')
 const PORT=process.env.PORT || 1400
 var cors=require('cors')
 server.use(cors())
-const MongoUrl='mongodb://test:test1234@ds117729.mlab.com:17729/coerproject'
+const MongoUrl='mongodb://rajat123:941040@cluster0-shard-00-00-nb3y9.mongodb.net:27017,cluster0-shard-00-01-nb3y9.mongodb.net:27017,cluster0-shard-00-02-nb3y9.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority'
 server.use(bodyparser.json())
 server.use(express.static(__dirname + '/dist/p1'));
 server.post('/api/signup',usercontroller.signup)
