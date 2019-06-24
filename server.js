@@ -7,7 +7,7 @@ var hotelcontroller=require('./hotelcontroller')
 var cartcontroller=require('./cartcontroller')
 var mong=require('mongoose')
 var bodyparser=require('body-parser')
-const PORT= 3100 || process.env.PORT
+const PORT= process.env.PORT || 1500
 var cors=require('cors')
 server.use(cors())
 const MongoUrl='mongodb://rajat123:941040@cluster0-shard-00-00-nb3y9.mongodb.net:27017,cluster0-shard-00-01-nb3y9.mongodb.net:27017,cluster0-shard-00-02-nb3y9.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority'
