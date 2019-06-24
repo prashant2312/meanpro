@@ -86,7 +86,12 @@ if(req.body.email && req.body.password)
         })
     })
 }
-
+else{
+    res.send({
+        code:9900,
+        error:'enter sufficient data'
+    })
+}
 }
 exports.addproduct=function(req,res)
 {
