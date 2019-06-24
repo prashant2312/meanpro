@@ -354,7 +354,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apiurl = 'http://localhost:1400/api/findall';
+//var apiurl='http://localhost:1400/api/findall'
+var apiurl = '/api/findall';
 var AppComponent = /** @class */ (function () {
     function AppComponent(http) {
         var _this = this;
